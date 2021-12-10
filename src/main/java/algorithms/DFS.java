@@ -16,6 +16,15 @@ public class DFS {
        f: []
     */
 
+    /* Has Path Graph:
+       f: ['g', 'i']
+       g: ['h']
+       h: []
+       i: ['g', 'k']
+       j: ['i']
+       k: []
+    */
+
     public static Character[] dfsCharGraph(Map<Character, Character[]> graph, char sourceNode) {
         var stack = new ArrayDeque<Character>();
         stack.push(sourceNode);
@@ -38,5 +47,25 @@ public class DFS {
         Arrays
             .asList(graph.get(sourceNode))
             .forEach(neighbor -> dfsCharGraphRecursive(graph, neighbor, result));
+    }
+
+    public static boolean dfsHasPathGraph(Map<Character, Character[]> graph, char source, char destination) {
+        var stack = new ArrayDeque<Character>();
+        stack.push(source);
+
+        var result = false;
+        while(!stack.isEmpty()) {
+            var currentNode = stack.pop();
+            if(currentNode == destination) {
+                result = true;
+                break;
+            }
+            else {
+                List
+                    .of(graph.get(currentNode))
+                    .forEach(stack::push);
+            }
+        }
+        return result;
     }
 }
