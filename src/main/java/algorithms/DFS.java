@@ -1,10 +1,11 @@
+package algorithms;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
-public final class Algorithms {
+public class DFS {
 
     /* Char Graph:
        a: ['b', 'c']
@@ -37,22 +38,5 @@ public final class Algorithms {
         Arrays
             .asList(graph.get(sourceNode))
             .forEach(neighbor -> dfsCharGraphRecursive(graph, neighbor, result));
-    }
-
-    public static Character[] bfsCharGraph(Map<Character, Character[]> graph, char sourceNode) {
-        var queue = new ConcurrentLinkedQueue<Character>();
-        queue.add(sourceNode);
-
-        var result = new Character[graph.size()];
-        var index = 0;
-        while(!queue.isEmpty()) {
-            var currentNode = queue.poll();
-            result[index] = currentNode;
-            index++;
-            queue.addAll(
-                List.of(graph.get(currentNode))
-            );
-        }
-        return result;
     }
 }
