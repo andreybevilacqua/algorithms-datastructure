@@ -9,8 +9,8 @@ public class DFSTest {
     @Test
     public void dfsCharGraphTest() {
         var charGraph = new CharGraph();
-        var graph = charGraph.getGraph();
-        var sourceNode = charGraph.getSourceNode();
+        var graph = charGraph.getFirstGraph();
+        var sourceNode = charGraph.getFirstGraphSourceNode();
         var result = Algorithms.dfsCharGraph(graph, sourceNode);
         System.out.println(Arrays.toString(result));
     }
@@ -18,8 +18,8 @@ public class DFSTest {
     @Test
     public void dfsCharGraphRecursiveTest() {
         var charGraph = new CharGraph();
-        var graph = charGraph.getGraph();
-        var sourceNode = charGraph.getSourceNode();
+        var graph = charGraph.getFirstGraph();
+        var sourceNode = charGraph.getFirstGraphSourceNode();
         var result = new ArrayList<Character>(graph.size());
         Algorithms.dfsCharGraphRecursive(graph, sourceNode, result);
         System.out.println(result);
@@ -28,8 +28,8 @@ public class DFSTest {
     @Test
     public void bfsCharGraphTest() {
         var charGraph = new CharGraph();
-        var graph = charGraph.getGraph();
-        var sourceNode = charGraph.getSourceNode();
+        var graph = charGraph.getFirstGraph();
+        var sourceNode = charGraph.getFirstGraphSourceNode();
         var result = Algorithms.bfsCharGraph(graph, sourceNode);
         System.out.println(Arrays.toString(result));
     }
