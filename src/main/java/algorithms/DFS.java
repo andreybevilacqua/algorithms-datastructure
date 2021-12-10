@@ -25,7 +25,7 @@ public class DFS {
        k: []
     */
 
-    public static Character[] dfsCharGraph(Map<Character, Character[]> graph, char sourceNode) {
+    public static Character[] charGraph(Map<Character, Character[]> graph, char sourceNode) {
         var stack = new ArrayDeque<Character>();
         stack.push(sourceNode);
 
@@ -42,14 +42,14 @@ public class DFS {
         return result;
     }
 
-    public static void dfsCharGraphRecursive(Map<Character, Character[]> graph, char sourceNode, List<Character> result) {
+    public static void charGraphRecursive(Map<Character, Character[]> graph, char sourceNode, List<Character> result) {
         result.add(sourceNode);
         Arrays
             .asList(graph.get(sourceNode))
-            .forEach(neighbor -> dfsCharGraphRecursive(graph, neighbor, result));
+            .forEach(neighbor -> charGraphRecursive(graph, neighbor, result));
     }
 
-    public static boolean dfsHasPathGraph(Map<Character, Character[]> graph, char source, char destination) {
+    public static boolean hasPathGraph(Map<Character, Character[]> graph, char source, char destination) {
         var stack = new ArrayDeque<Character>();
         stack.push(source);
 

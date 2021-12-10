@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -15,7 +16,16 @@ public class BFS {
        f: []
     */
 
-    public static Character[] bfsCharGraph(Map<Character, Character[]> graph, char sourceNode) {
+    /* Has Path Graph:
+       f: ['g', 'i']
+       g: ['h']
+       h: []
+       i: ['g', 'k']
+       j: ['i']
+       k: []
+    */
+
+    public static Character[] charGraph(Map<Character, Character[]> graph, char sourceNode) {
         var queue = new ConcurrentLinkedQueue<Character>();
         queue.add(sourceNode);
 
@@ -28,6 +38,26 @@ public class BFS {
             queue.addAll(
                 List.of(graph.get(currentNode))
             );
+        }
+        return result;
+    }
+
+    public static boolean hasPathGraph(Map<Character, Character[]> graph, char source, char destination) {
+        var queue = new ConcurrentLinkedQueue<Character>();
+        queue.add(source);
+
+        var result = false;
+        while(!queue.isEmpty()) {
+            var currentNode = queue.poll();
+            if(currentNode == destination) {
+                result = true;
+                break;
+            }
+            else {
+                queue.addAll(
+                    List.of(graph.get(currentNode))
+                );
+            }
         }
         return result;
     }
