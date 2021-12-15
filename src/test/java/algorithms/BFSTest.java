@@ -1,4 +1,5 @@
-import algorithms.BFS;
+package algorithms;
+
 import graphs.GraphFactory;
 import org.junit.Assert;
 import org.junit.Test;
