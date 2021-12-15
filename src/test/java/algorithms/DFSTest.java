@@ -1,26 +1,29 @@
 package algorithms;
 
-import graphs.GraphFactory;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static algorithms.DFS.charGraph;
+import static algorithms.DFS.hasPathGraph;
+import static graphs.GraphFactory.*;
+
 public class DFSTest {
 
     @Test
     public void dfsCharGraphTest() {
-        var graph = GraphFactory.createFirstGraph();
-        var sourceNode = GraphFactory.getFirstGraphSourceNode();
-        var result = DFS.charGraph(graph, sourceNode);
+        var graph = createFirstGraph();
+        var sourceNode = getFirstGraphSourceNode();
+        var result = charGraph(graph, sourceNode);
         System.out.println(Arrays.toString(result));
     }
 
     @Test
     public void dfsCharGraphRecursiveTest() {
-        var graph = GraphFactory.createFirstGraph();
-        var sourceNode = GraphFactory.getFirstGraphSourceNode();
+        var graph = createFirstGraph();
+        var sourceNode = getFirstGraphSourceNode();
         var result = new ArrayList<Character>(graph.size());
         DFS.charGraphRecursive(graph, sourceNode, result);
         System.out.println(result);
@@ -28,13 +31,13 @@ public class DFSTest {
 
     @Test
     public void dfsHasPathGraphTest() {
-        var graph = GraphFactory.createHasPathGraph();
+        var graph = createHasPathGraph();
         var source = 'f';
         var destination = 'k';
-        Assert.assertTrue(DFS.hasPathGraph(graph, source, destination));
+        Assert.assertTrue(hasPathGraph(graph, source, destination));
 
         source = 'j';
         destination = 'f';
-        Assert.assertFalse(DFS.hasPathGraph(graph, source, destination));
+        Assert.assertFalse(hasPathGraph(graph, source, destination));
     }
 }

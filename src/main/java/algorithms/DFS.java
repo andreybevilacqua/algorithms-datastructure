@@ -25,6 +25,16 @@ public class DFS {
        k: []
     */
 
+    /* Undirected Edge Path
+        i: [j, k],
+        j: [i],
+        k: [i, m, l],
+        l: [k],
+        m: [k],
+        n: [o],
+        o: [n]
+     */
+
     public static Character[] charGraph(Map<Character, Character[]> graph, char sourceNode) {
         var stack = new ArrayDeque<Character>();
         stack.push(sourceNode);
