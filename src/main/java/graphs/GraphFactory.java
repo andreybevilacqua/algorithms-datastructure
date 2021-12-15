@@ -1,11 +1,7 @@
 package graphs;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static java.util.stream.Collectors.toList;
 
 public final class GraphFactory {
 
@@ -29,24 +25,6 @@ public final class GraphFactory {
         result.put('i', new Character[]{'g', 'k'});
         result.put('j', new Character[]{'i'});
         result.put('k', new Character[]{});
-        return result;
-    }
-
-    public static Map<Character, List<Character>> mapUndirectedEdgePath(List<List<Character>> edge) {
-        final Map<Character, List<Character>> result = new HashMap<>();
-        for(List<Character> list : edge) {
-            for (Character c : list) {
-                if (!result.containsKey(c)) result.put(c, new ArrayList<>());
-                result
-                    .get(c)
-                    .addAll(
-                        list
-                            .stream()
-                            .filter(letter -> letter != c)
-                            .collect(toList())
-                    );
-            }
-        }
         return result;
     }
 }

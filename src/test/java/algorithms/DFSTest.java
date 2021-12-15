@@ -1,6 +1,5 @@
 package algorithms;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -8,7 +7,12 @@ import java.util.Arrays;
 
 import static algorithms.DFS.charGraph;
 import static algorithms.DFS.hasPathGraph;
+import static graphs.EdgeFactory.createUndirectedEdgePath;
 import static graphs.GraphFactory.*;
+import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
+import static mapper.GraphMapper.mapUndirectedEdgePathToGraph;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class DFSTest {
 
@@ -34,10 +38,19 @@ public class DFSTest {
         var graph = createHasPathGraph();
         var source = 'f';
         var destination = 'k';
-        Assert.assertTrue(hasPathGraph(graph, source, destination));
+        assertTrue(hasPathGraph(graph, source, destination));
 
         source = 'j';
         destination = 'f';
-        Assert.assertFalse(hasPathGraph(graph, source, destination));
+        assertFalse(hasPathGraph(graph, source, destination));
+    }
+
+    @Test
+    public void dfsUndirectedEdgePath() {
+        var edge = createUndirectedEdgePath();
+        var graph = mapGraphWithListToGraphWithArray(mapUndirectedEdgePathToGraph(edge));
+        var source = 'i';
+        var destination = 'k';
+        assertTrue(hasPathGraph(graph, source, destination));
     }
 }
