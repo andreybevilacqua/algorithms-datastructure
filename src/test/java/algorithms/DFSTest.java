@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
-import static algorithms.DFS.charGraph;
-import static algorithms.DFS.hasPathGraph;
+import static algorithms.DFS.*;
 import static graphs.EdgeFactory.createUndirectedEdgePath;
 import static graphs.GraphFactory.*;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
@@ -46,11 +46,15 @@ public class DFSTest {
     }
 
     @Test
-    public void dfsUndirectedEdgePath() {
+    public void dfsUndirectedEdgePathTest() {
         var edge = createUndirectedEdgePath();
         var graph = mapGraphWithListToGraphWithArray(mapUndirectedEdgePathToGraph(edge));
         var source = 'i';
         var destination = 'k';
         assertTrue(hasPathGraph(graph, source, destination));
+        assertTrue(hasPathGraphRecursiveWithVisitControl(graph, source, destination, new HashSet<>()));
+
+        destination = 'o';
+        assertFalse(hasPathGraphWithVisitControl(graph, source, destination));
     }
 }

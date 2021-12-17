@@ -1,39 +1,8 @@
 package algorithms;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DFS {
-
-    /* Char Graph:
-       a: ['b', 'c']
-       b: ['d']
-       c: ['e']
-       d: ['f']
-       e: []
-       f: []
-    */
-
-    /* Has Path Graph:
-       f: ['g', 'i']
-       g: ['h']
-       h: []
-       i: ['g', 'k']
-       j: ['i']
-       k: []
-    */
-
-    /* Undirected Edge Path
-        i: [j, k],
-        j: [i],
-        k: [i, m, l],
-        l: [k],
-        m: [k],
-        n: [o],
-        o: [n]
-     */
 
     public static Character[] charGraph(Map<Character, Character[]> graph, char sourceNode) {
         var stack = new ArrayDeque<Character>();
@@ -77,5 +46,45 @@ public class DFS {
             }
         }
         return result;
+    }
+
+    public static boolean hasPathGraphWithVisitControl(Map<Character, Character[]> graph, char source, char destination) {
+        var stack = new ArrayDeque<Character>();
+        var visited = new HashSet<Character>();
+        stack.push(source);
+
+        var result = false;
+        while(!stack.isEmpty()) {
+            var currentNode = stack.pop();
+            if(!visited.contains(currentNode)) {
+                visited.add(currentNode);
+                if(currentNode == destination) {
+                    result = true;
+                    break;
+                }
+                else {
+                    List
+                        .of(graph.get(currentNode))
+                        .forEach(stack::push);
+                }
+            }
+        }
+        return result;
+    }
+
+    public static boolean hasPathGraphRecursiveWithVisitControl(Map<Character, Character[]> graph,
+                                                                char source,
+                                                                char destination,
+                                                                Set<Character> visited) {
+        if(source == destination) return true;
+
+        if(visited.contains(source)) return false;
+        else visited.add(source);
+
+        var neighbors = graph.get(source);
+        for(Character c : neighbors) {
+            if(hasPathGraphRecursiveWithVisitControl(graph, c, destination, visited)) return true;
+        }
+        return false;
     }
 }
