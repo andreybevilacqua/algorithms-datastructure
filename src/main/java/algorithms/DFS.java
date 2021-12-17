@@ -1,6 +1,7 @@
 package algorithms;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DFS {
 
@@ -86,5 +87,32 @@ public class DFS {
             if(hasPathGraphRecursiveWithVisitControl(graph, c, destination, visited)) return true;
         }
         return false;
+    }
+
+    public static int countConnectedComponents(Map<Integer, Integer[]> graph) {
+        var stack = new ArrayDeque<Integer>();
+        var visited = new HashSet<Integer>();
+        var count = new AtomicInteger();
+
+        graph
+            .forEach((key, value) -> {
+                if(!visited.contains(key)) {
+                    visited.add(key);
+                    for(int i : value) {
+                        stack.push(i);
+                    }
+                    while(!stack.isEmpty()) {
+                        var currentNode = stack.pop();
+                        if (!visited.contains(currentNode)) {
+                            visited.add(currentNode);
+                            for (int j : graph.get(currentNode)) {
+                                if(!visited.contains(j)) stack.push(j);
+                            }
+                        }
+                    }
+                    count.incrementAndGet();
+                }
+            });
+        return count.get();
     }
 }

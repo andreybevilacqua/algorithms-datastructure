@@ -11,8 +11,7 @@ import static graphs.EdgeFactory.createUndirectedEdgePath;
 import static graphs.GraphFactory.*;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static mapper.GraphMapper.mapUndirectedEdgePathToGraph;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class DFSTest {
 
@@ -56,5 +55,17 @@ public class DFSTest {
 
         destination = 'o';
         assertFalse(hasPathGraphWithVisitControl(graph, source, destination));
+    }
+
+    @Test
+    public void dfsCountConnectedComponentsTest() {
+        var graph = createConnectedComponentsCountGraph();
+        assertEquals(3, countConnectedComponents(graph));
+
+        graph = createConnectedComponentsCountGraph2();
+        assertEquals(2, countConnectedComponents(graph));
+
+        graph = createConnectedComponentsCountGraph3();
+        assertEquals(1, countConnectedComponents(graph));
     }
 }
