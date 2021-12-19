@@ -33,7 +33,7 @@ public final class GraphFactory {
         result.put(3, new Integer[]{});
         result.put(4, new Integer[]{6});
         result.put(6, new Integer[]{4,5,7,8});
-        result.put(8, new Integer[]{8});
+        result.put(8, new Integer[]{6});
         result.put(7, new Integer[]{6});
         result.put(5, new Integer[]{6});
         result.put(1, new Integer[]{2});
@@ -61,6 +61,18 @@ public final class GraphFactory {
         result.put(9, new Integer[]{8});
         result.put(7, new Integer[]{6, 8});
         result.put(8, new Integer[]{9, 7, 2});
+        return result;
+    }
+
+    public static Map<Integer, Integer[]> createLargestComponentGraph() {
+        final Map<Integer, Integer[]> result = new HashMap<>();
+        result.put(0, new Integer[]{8, 1, 5});
+        result.put(1, new Integer[]{0});
+        result.put(5, new Integer[]{0, 8});
+        result.put(8, new Integer[]{0, 5});
+        result.put(2, new Integer[]{3, 4});
+        result.put(3, new Integer[]{2, 4});
+        result.put(4, new Integer[]{3, 2});
         return result;
     }
 }

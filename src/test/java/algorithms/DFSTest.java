@@ -68,4 +68,13 @@ public class DFSTest {
         graph = createConnectedComponentsCountGraph3();
         assertEquals(1, countConnectedComponents(graph));
     }
+
+    @Test
+    public void dfsLargestComponentTest() {
+        var graph = createLargestComponentGraph();
+        assertEquals(4, largestComponentWithVisitControl(graph));
+
+        graph = createConnectedComponentsCountGraph();
+        assertEquals(5, largestComponentWithVisitControl(graph));
+    }
 }

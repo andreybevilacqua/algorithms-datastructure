@@ -115,4 +115,53 @@ public class DFS {
             });
         return count.get();
     }
+
+    /*
+        0: [8, 1, 5],
+        1: [0],
+        5: [0, 8],
+        8: [0, 5],
+        2: [3, 4],
+        3: [2, 4],
+        4: [3, 2]
+     */
+
+    // largest = 4
+    // current = 3
+    // visited = {0, 8, 1, 5, 2, 3, 4}
+    // stack = {}
+    // key = 2
+    // currentNode =
+    public static int largestComponentWithVisitControl(Map<Integer, Integer[]> graph) {
+        var largest = new AtomicInteger();
+        var current = new AtomicInteger();
+        var visited = new HashSet<Integer>();
+        var stack = new ArrayDeque<Integer>();
+
+        graph
+            .forEach((key, values) -> {
+                if(!visited.contains(key)) {
+                    visited.add(key);
+                    current.incrementAndGet();
+
+                    for(int neighbor : values) {
+                        stack.push(neighbor);
+                    }
+
+                    while(!stack.isEmpty()) {
+                        var currentNode = stack.pop();
+                        if(!visited.contains(currentNode)) {
+                            visited.add(currentNode);
+                            current.incrementAndGet();
+                            List
+                                .of(graph.get(currentNode))
+                                .forEach(stack::push);
+                        }
+                    }
+                    if(current.get() > largest.get()) largest.set(current.get());
+                    current.set(0);
+                }
+            });
+        return largest.get();
+    }
 }
