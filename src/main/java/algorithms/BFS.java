@@ -6,24 +6,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class BFS {
 
-    /* Char Graph:
-       a: ['b', 'c']
-       b: ['d']
-       c: ['e']
-       d: ['f']
-       e: []
-       f: []
-    */
-
-    /* Has Path Graph:
-       f: ['g', 'i']
-       g: ['h']
-       h: []
-       i: ['g', 'k']
-       j: ['i']
-       k: []
-    */
-
     public static Character[] charGraph(Map<Character, Character[]> graph, char sourceNode) {
         var queue = new ConcurrentLinkedQueue<Character>();
         queue.add(sourceNode);

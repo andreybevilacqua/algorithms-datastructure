@@ -55,6 +55,13 @@ Algorithms:
     3: [2, 4],
     4: [3, 2]
 
+### Shortest Path Edge transformed into a graph:
+    w: [x, v],
+    x: [w, y],
+    y: [x, z],
+    v: [w, z],
+    z: [v, y],
+
 ## Edges
 
 ### Undirected Edge Path
@@ -64,4 +71,13 @@ Algorithms:
         [m, k],
         [k, l],
         [o, n]
+    ]
+
+### Shortest Path
+    [
+        [w, x],
+        [x, y],
+        [z, y],
+        [z, v],
+        [w, v],
     ]
