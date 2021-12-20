@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static graphs.EdgeFactory.createUndirectedEdgePath;
-import static mapper.GraphMapper.mapUndirectedEdgePathToGraph;
+import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.assertTrue;
 
 public class GraphMapperTest {
@@ -13,7 +13,7 @@ public class GraphMapperTest {
     @Test
     public void shouldMapUndirectedEdgePathToGraph() {
         var edge = createUndirectedEdgePath();
-        var result = mapUndirectedEdgePathToGraph(edge);
+        var result = mapEdgePathToGraph(edge);
         assertTrue(result.get('i').containsAll(List.of('j', 'k')));
         assertTrue(result.get('j').contains('i'));
         assertTrue(result.get('k').containsAll(List.of('i', 'm', 'l')));

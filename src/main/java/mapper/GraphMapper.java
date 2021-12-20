@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.toList;
 
 public final class GraphMapper {
 
-    public static Map<Character, List<Character>> mapUndirectedEdgePathToGraph(List<List<Character>> edge) {
+    public static Map<Character, List<Character>> mapEdgePathToGraph(List<List<Character>> edge) {
         final Map<Character, List<Character>> result = new HashMap<>();
         for(List<Character> list : edge) {
             for (Character c : list) {

@@ -10,7 +10,7 @@ import static algorithms.DFS.*;
 import static graphs.EdgeFactory.createUndirectedEdgePath;
 import static graphs.GraphFactory.*;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
-import static mapper.GraphMapper.mapUndirectedEdgePathToGraph;
+import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.*;
 
 public class DFSTest {
@@ -47,7 +47,7 @@ public class DFSTest {
     @Test
     public void dfsUndirectedEdgePathTest() {
         var edge = createUndirectedEdgePath();
-        var graph = mapGraphWithListToGraphWithArray(mapUndirectedEdgePathToGraph(edge));
+        var graph = mapGraphWithListToGraphWithArray(mapEdgePathToGraph(edge));
         var source = 'i';
         var destination = 'k';
         assertTrue(hasPathGraph(graph, source, destination));
