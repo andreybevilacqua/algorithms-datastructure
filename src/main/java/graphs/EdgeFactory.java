@@ -14,4 +14,15 @@ public final class EdgeFactory {
                 List.of('o', 'n')
             );
     }
+
+    public static List<List<Character>> createdShortestPathEdgePath() {
+        return List
+            .of(
+                List.of('w', 'x'),
+                List.of('x', 'y'),
+                List.of('z', 'y'),
+                List.of('z', 'v'),
+                List.of('w', 'v')
+            );
+    }
 }
