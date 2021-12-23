@@ -5,9 +5,9 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static algorithms.BFS.*;
-import static graphs.EdgeFactory.createUndirectedEdgePath;
-import static graphs.EdgeFactory.createdShortestPathEdgePath;
-import static graphs.GraphFactory.*;
+import static factories.EdgeFactory.createUndirectedEdgePath;
+import static factories.EdgeFactory.createdShortestPathEdgePath;
+import static factories.GraphFactory.*;
 import static mapper.GraphMapper.mapEdgePathToGraph;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static org.junit.Assert.*;

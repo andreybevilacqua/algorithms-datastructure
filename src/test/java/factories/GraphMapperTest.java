@@ -1,11 +1,11 @@
-package graphs;
+package factories;
 
 import org.junit.Test;
 
 import java.util.List;
 
-import static graphs.EdgeFactory.createUndirectedEdgePath;
-import static graphs.EdgeFactory.createdShortestPathEdgePath;
+import static factories.EdgeFactory.createUndirectedEdgePath;
+import static factories.EdgeFactory.createdShortestPathEdgePath;
 import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.assertTrue;
 

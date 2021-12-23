@@ -1,4 +1,4 @@
-package graphs;
+package factories;
 
 import java.util.HashMap;
 import java.util.Map;

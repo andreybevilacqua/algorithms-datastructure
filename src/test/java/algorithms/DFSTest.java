@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 import static algorithms.DFS.*;
-import static graphs.EdgeFactory.createUndirectedEdgePath;
-import static graphs.GraphFactory.*;
+import static factories.EdgeFactory.createUndirectedEdgePath;
+import static factories.GraphFactory.*;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.*;
