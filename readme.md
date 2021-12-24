@@ -81,3 +81,14 @@ Algorithms:
         [z, v],
         [w, v],
     ]
+
+## Matrix
+
+### Island count
+    | w | l | w | w | l | w |
+    | l | l | w | w | l | w |
+    | w | l | w | w | w | w |
+    | w | w | w | l | l | w |
+    | w | l | w | l | l | w |
+    | w | w | w | w | w | w |
+    

@@ -1,5 +1,6 @@
 package algorithms;
 
+import factories.MatrixFactory;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.HashSet;
 import static algorithms.DFS.*;
 import static factories.EdgeFactory.createUndirectedEdgePath;
 import static factories.GraphFactory.*;
+import static factories.MatrixFactory.createIslandCountMatrix;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.*;
@@ -76,5 +78,11 @@ public class DFSTest {
 
         graph = createConnectedComponentsCountGraph();
         assertEquals(5, largestComponentWithVisitControl(graph));
+    }
+
+    @Test
+    public void dfsIslandCount() {
+        var matrix = createIslandCountMatrix();
+        assertEquals(4, islandCount(matrix));
     }
 }

@@ -1,5 +1,7 @@
 package algorithms;
 
+import models.MatrixNode;
+
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -73,10 +75,7 @@ public class DFS {
         return result;
     }
 
-    public static boolean hasPathGraphRecursiveWithVisitControl(Map<Character, Character[]> graph,
-                                                                char source,
-                                                                char destination,
-                                                                Set<Character> visited) {
+    public static boolean hasPathGraphRecursiveWithVisitControl(Map<Character, Character[]> graph, char source, char destination, Set<Character> visited) {
         if(source == destination) return true;
 
         if(visited.contains(source)) return false;
@@ -116,22 +115,6 @@ public class DFS {
         return count.get();
     }
 
-    /*
-        0: [8, 1, 5],
-        1: [0],
-        5: [0, 8],
-        8: [0, 5],
-        2: [3, 4],
-        3: [2, 4],
-        4: [3, 2]
-     */
-
-    // largest = 4
-    // current = 3
-    // visited = {0, 8, 1, 5, 2, 3, 4}
-    // stack = {}
-    // key = 2
-    // currentNode =
     public static int largestComponentWithVisitControl(Map<Integer, Integer[]> graph) {
         var largest = new AtomicInteger();
         var current = new AtomicInteger();
@@ -163,5 +146,53 @@ public class DFS {
                 }
             });
         return largest.get();
+    }
+
+    public static int islandCount(char[][] matrix) {
+        var stack = new ArrayDeque<MatrixNode>();
+        var visited = new HashSet<MatrixNode>();
+        var result = 0;
+
+        for(int row = 0; row < matrix.length; row++) {
+            for(int col = 0; col < matrix[row].length; col++) {
+                if(matrix[row][col] == 'l') {
+                    var land = new MatrixNode(row, col);
+                    if(!visited.contains(land)) {
+                        visited.add(land);
+                        for(MatrixNode n : findNeighborLands(matrix, row, col, visited)) {
+                            stack.push(n);
+                        }
+                        while(!stack.isEmpty()) {
+                            var currentNode = stack.pop();
+                            if(!visited.contains(currentNode)) {
+                                visited.add(currentNode);
+                                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
+                                    stack.push(n);
+                                }
+                            }
+                        }
+                        result++;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    private static MatrixNode[] findNeighborLands(char[][] matrix, int row, int col, Set<MatrixNode> visited) {
+        var result = new ArrayList<MatrixNode>();
+        var down = row + 1;
+        var left = col - 1;
+        var right = col + 1;
+        if(down < matrix.length && isValidLand(matrix, down, col, visited)) result.add(new MatrixNode(down, col));
+        if(left > -1 && isValidLand(matrix, row, left, visited)) result.add(new MatrixNode(row, left));
+        if(right < matrix[row].length && isValidLand(matrix, row, right, visited)) result.add(new MatrixNode(row, right));
+
+        return result.toArray(new MatrixNode[0]);
+    }
+
+    private static boolean isValidLand(char[][] matrix, int row, int col, Set<MatrixNode> visited) {
+        var tempNode = new MatrixNode(row, col);
+        return matrix[row][col] == 'l' && !visited.contains(tempNode);
     }
 }
