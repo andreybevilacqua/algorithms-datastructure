@@ -159,24 +159,28 @@ public class DFS {
                     var land = new MatrixNode(row, col);
                     if(!visited.contains(land)) {
                         visited.add(land);
-                        for(MatrixNode n : findNeighborLands(matrix, row, col, visited)) {
-                            stack.push(n);
-                        }
-                        while(!stack.isEmpty()) {
-                            var currentNode = stack.pop();
-                            if(!visited.contains(currentNode)) {
-                                visited.add(currentNode);
-                                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
-                                    stack.push(n);
-                                }
-                            }
-                        }
+                        exploreLandNeighbors(matrix, stack, visited, row, col);
                         result++;
                     }
                 }
             }
         }
         return result;
+    }
+
+    private static void exploreLandNeighbors(char[][] matrix, ArrayDeque<MatrixNode> stack, HashSet<MatrixNode> visited, int row, int col) {
+        for(MatrixNode n : findNeighborLands(matrix, row, col, visited)) {
+            stack.push(n);
+        }
+        while(!stack.isEmpty()) {
+            var currentNode = stack.pop();
+            if(!visited.contains(currentNode)) {
+                visited.add(currentNode);
+                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
+                    stack.push(n);
+                }
+            }
+        }
     }
 
     private static MatrixNode[] findNeighborLands(char[][] matrix, int row, int col, Set<MatrixNode> visited) {
