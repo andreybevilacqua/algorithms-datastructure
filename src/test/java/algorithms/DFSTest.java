@@ -10,7 +10,7 @@ import java.util.HashSet;
 import static algorithms.DFS.*;
 import static factories.EdgeFactory.createUndirectedEdgePath;
 import static factories.GraphFactory.*;
-import static factories.MatrixFactory.createIslandCountMatrix;
+import static factories.MatrixFactory.*;
 import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.*;
@@ -84,5 +84,17 @@ public class DFSTest {
     public void dfsIslandCount() {
         var matrix = createIslandCountMatrix();
         assertEquals(4, islandCount(matrix));
+
+        matrix = createIslandCountMatrix2();
+        assertEquals(3, islandCount(matrix));
+
+        matrix = createIslandCountMatrix3();
+        assertEquals(4, islandCount(matrix));
+
+        matrix = createIslandCountMatrix4();
+        assertEquals(1, islandCount(matrix));
+
+        matrix = createIslandCountMatrix5();
+        assertEquals(0, islandCount(matrix));
     }
 }
