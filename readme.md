@@ -84,7 +84,7 @@ Algorithms:
 
 ## Matrix
 
-### Island count
+### Island count & Minimum Island
     | w | l | w | w | l | w |
     | l | l | w | w | l | w |
     | w | l | w | w | w | w |

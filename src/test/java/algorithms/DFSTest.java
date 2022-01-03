@@ -96,4 +96,22 @@ public class DFSTest {
         matrix = createIslandCountMatrix5();
         assertEquals(0, islandCount(matrix));
     }
+
+    @Test
+    public void dfsMinimumIsland() {
+        var matrix = createIslandCountMatrix();
+        assertEquals(1, minimumIsland(matrix));
+
+        matrix = createIslandCountMatrix2();
+        assertEquals(2, minimumIsland(matrix));
+
+        matrix = createIslandCountMatrix3();
+        assertEquals(1, minimumIsland(matrix));
+
+        matrix = createIslandCountMatrix4();
+        assertEquals(9, minimumIsland(matrix));
+
+        matrix = createIslandCountMatrix5();
+        assertEquals(-1, minimumIsland(matrix));
+    }
 }

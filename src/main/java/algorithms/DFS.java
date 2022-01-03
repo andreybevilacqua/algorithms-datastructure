@@ -168,6 +168,30 @@ public class DFS {
         return result;
     }
 
+    public static int minimumIsland(char[][] matrix) {
+        var stack = new ArrayDeque<MatrixNode>();
+        var visited = new HashSet<MatrixNode>();
+        var minSize = -1;
+        var count = 0;
+
+        for(int row = 0; row < matrix.length; row++) {
+            for(int col = 0; col < matrix[row].length; col++) {
+                if(matrix[row][col] == 'l') {
+                    count = 0;
+                    var land = new MatrixNode(row, col);
+                    if(!visited.contains(land)) {
+                        visited.add(land);
+                        count++;
+                        count += countLandNeighbors(matrix, stack, visited, row, col);
+                        if(minSize == -1) minSize = count;
+                        else if(count < minSize) minSize = count;
+                    }
+                }
+            }
+        }
+        return minSize;
+    }
+
     private static void exploreLandNeighbors(char[][] matrix, ArrayDeque<MatrixNode> stack, HashSet<MatrixNode> visited, int row, int col) {
         for(MatrixNode n : findNeighborLands(matrix, row, col, visited)) {
             stack.push(n);
@@ -181,6 +205,28 @@ public class DFS {
                 }
             }
         }
+    }
+
+    private static int countLandNeighbors(char[][] matrix,
+                                          ArrayDeque<MatrixNode> stack,
+                                          HashSet<MatrixNode> visited,
+                                          int row,
+                                          int col) {
+        var result = 0;
+        for(MatrixNode n : findNeighborLands(matrix, row, col, visited)) {
+            stack.push(n);
+        }
+        while(!stack.isEmpty()) {
+            var currentNode = stack.pop();
+            if(!visited.contains(currentNode)) {
+                visited.add(currentNode);
+                result++;
+                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
+                    stack.push(n);
+                }
+            }
+        }
+        return result;
     }
 
     private static MatrixNode[] findNeighborLands(char[][] matrix, int row, int col, Set<MatrixNode> visited) {
