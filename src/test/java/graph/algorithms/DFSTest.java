@@ -1,4 +1,4 @@
-package algorithms;
+package graph.algorithms;
 
 import graph.algorithms.DFS;
 import org.junit.Test;
