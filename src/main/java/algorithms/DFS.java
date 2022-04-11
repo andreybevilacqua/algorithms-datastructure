@@ -200,7 +200,7 @@ public class DFS {
             var currentNode = stack.pop();
             if(!visited.contains(currentNode)) {
                 visited.add(currentNode);
-                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
+                for(MatrixNode n : findNeighborLands(matrix, currentNode.row(), currentNode.col(), visited)) {
                     stack.push(n);
                 }
             }
@@ -221,7 +221,7 @@ public class DFS {
             if(!visited.contains(currentNode)) {
                 visited.add(currentNode);
                 result++;
-                for(MatrixNode n : findNeighborLands(matrix, currentNode.getRow(), currentNode.getCol(), visited)) {
+                for(MatrixNode n : findNeighborLands(matrix, currentNode.row(), currentNode.col(), visited)) {
                     stack.push(n);
                 }
             }
