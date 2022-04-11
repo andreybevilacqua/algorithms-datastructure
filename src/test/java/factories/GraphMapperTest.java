@@ -6,7 +6,7 @@ import java.util.List;
 
 import static factories.EdgeFactory.createUndirectedEdgePath;
 import static factories.EdgeFactory.createdShortestPathEdgePath;
-import static mapper.GraphMapper.mapEdgePathToGraph;
+import static graph.mapper.GraphMapper.mapEdgePathToGraph;
 import static org.junit.Assert.assertTrue;
 
 public class GraphMapperTest {

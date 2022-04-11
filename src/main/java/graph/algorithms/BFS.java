@@ -1,4 +1,4 @@
-package algorithms;
+package graph.algorithms;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

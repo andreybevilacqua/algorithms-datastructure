@@ -4,12 +4,12 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static algorithms.BFS.*;
+import static graph.algorithms.BFS.*;
 import static factories.EdgeFactory.createUndirectedEdgePath;
 import static factories.EdgeFactory.createdShortestPathEdgePath;
 import static factories.GraphFactory.*;
-import static mapper.GraphMapper.mapEdgePathToGraph;
-import static mapper.GraphMapper.mapGraphWithListToGraphWithArray;
+import static graph.mapper.GraphMapper.mapEdgePathToGraph;
+import static graph.mapper.GraphMapper.mapGraphWithListToGraphWithArray;
 import static org.junit.Assert.*;
 
 public class BFSTest {

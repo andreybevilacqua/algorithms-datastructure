@@ -1,6 +1,6 @@
-package algorithms;
+package graph.algorithms;
 
-import models.MatrixNode;
+import graph.models.MatrixNode;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;

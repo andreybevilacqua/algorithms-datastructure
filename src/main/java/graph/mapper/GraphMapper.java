@@ -1,4 +1,4 @@
-package mapper;
+package graph.mapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
