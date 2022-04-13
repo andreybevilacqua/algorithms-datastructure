@@ -9,6 +9,15 @@ Algorithms:
     - DFS (iterative and recursive)
     - BFS (iterative and recursive)
 
+## Binary Trees
+
+### Simple binary tree:
+            a
+          /   \
+         b     c
+       /   \    \
+      d     e    f
+
 ## Graphs
 
 ### Char Graph:
