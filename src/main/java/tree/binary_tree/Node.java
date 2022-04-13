@@ -44,4 +44,13 @@ public class Node<T> {
     public int hashCode() {
         return Objects.hash(getVal(), getLeft(), getRight());
     }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
 }
