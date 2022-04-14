@@ -20,4 +20,19 @@ public class BFS {
         }
         return result;
     }
+
+    public static boolean treeIncludes(Node<Character> destination, Node<Character> root) {
+        if(root == null) return false;
+        var queue = new ConcurrentLinkedQueue<Node<Character>>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            var current = queue.poll();
+            if(current.equals(destination)) return true;
+            else {
+                if(current.getLeft() != null) queue.add(current.getLeft());
+                if(current.getRight() != null) queue.add(current.getRight());
+            }
+        }
+        return false;
+    }
 }
