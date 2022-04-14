@@ -37,12 +37,12 @@ public class Node<T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Node<?> node)) return false;
-        return getVal().equals(node.getVal()) && getLeft().equals(node.getLeft()) && getRight().equals(node.getRight());
+        return getVal().equals(node.getVal());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getVal(), getLeft(), getRight());
+        return Objects.hash(getVal());
     }
 
     @Override
