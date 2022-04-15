@@ -3,10 +3,9 @@ package tree.binary_tree;
 import org.junit.Test;
 
 import static factories.BinaryTreeFactory.charBinaryTree;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static tree.binary_tree.algorithms.BFS.bfsForCharBinaryTree;
-import static tree.binary_tree.algorithms.BFS.treeIncludes;
+import static factories.BinaryTreeFactory.intBinaryTree;
+import static org.junit.Assert.*;
+import static tree.binary_tree.algorithms.BFS.*;
 
 public class BFSTest {
 
@@ -31,5 +30,11 @@ public class BFSTest {
 
         destination = new Node<>('h');
         assertFalse(treeIncludes(root, destination));
+    }
+
+    @Test
+    public void treeSumTest() {
+        var root = intBinaryTree();
+        assertEquals(25, treeSum(root));
     }
 }

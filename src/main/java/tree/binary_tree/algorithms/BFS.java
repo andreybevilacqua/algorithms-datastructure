@@ -35,4 +35,18 @@ public class BFS {
         }
         return false;
     }
+
+    public static int treeSum(Node<Integer> root) {
+        var result = 0;
+        if(root == null) return result;
+        var queue = new ConcurrentLinkedQueue<Node<Integer>>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            var current = queue.poll();
+            result += current.getVal();
+            if(current.getLeft() != null) queue.add(current.getLeft());
+            if(current.getRight() != null) queue.add(current.getRight());
+        }
+        return result;
+    }
 }
