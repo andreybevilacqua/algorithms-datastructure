@@ -3,8 +3,8 @@ package tree.binary_tree;
 import org.junit.Test;
 
 import static factories.BinaryTreeFactory.charBinaryTree;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static factories.BinaryTreeFactory.intBinaryTree;
+import static org.junit.Assert.*;
 import static tree.binary_tree.algorithms.DFS.*;
 
 public class DFSTest {
@@ -32,5 +32,12 @@ public class DFSTest {
         assertTrue(treeIncludesRecursive(root, destination));
         destination = new Node<>('h');
         assertFalse(treeIncludesRecursive(root, destination));
+    }
+
+    @Test
+    public void treeSumTest() {
+        var root = intBinaryTree();
+        var result = treeSumRecursive(root);
+        assertEquals(25, result);
     }
 }

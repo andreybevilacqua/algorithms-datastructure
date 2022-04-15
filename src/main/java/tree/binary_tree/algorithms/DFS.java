@@ -38,4 +38,9 @@ public class DFS {
         if(root.equals(destination)) return true;
         return treeIncludesRecursive(root.getLeft(), destination) || treeIncludesRecursive(root.getRight(), destination);
     }
+
+    public static int treeSumRecursive(Node<Integer> root) {
+        if(root == null) return 0;
+        return root.getVal() + treeSumRecursive(root.getLeft()) + treeSumRecursive(root.getRight());
+    }
 }
