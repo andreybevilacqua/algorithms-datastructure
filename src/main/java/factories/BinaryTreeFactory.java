@@ -20,4 +20,22 @@ public final class BinaryTreeFactory {
 
         return a;
     }
+
+
+    public static Node<Integer> intBinaryTree() {
+        var a = new Node<>(3);
+        var b = new Node<>(11);
+        var c = new Node<>(4);
+        var d = new Node<>(4);
+        var e = new Node<>(2);
+        var f = new Node<>(1);
+
+        a.setLeft(b);
+        a.setRight(c);
+        b.setLeft(d);
+        b.setRight(e);
+        c.setRight(f);
+
+        return a;
+    }
 }
