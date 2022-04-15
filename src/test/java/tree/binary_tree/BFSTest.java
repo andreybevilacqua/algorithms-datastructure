@@ -27,9 +27,9 @@ public class BFSTest {
     public void treeIncludesExercise() {
         var root = simpleBinaryTree();
         var destination = new Node<>('e');
-        assertTrue(treeIncludes(destination, root));
+        assertTrue(treeIncludes(root, destination));
 
         destination = new Node<>('h');
-        assertFalse(treeIncludes(destination, root));
+        assertFalse(treeIncludes(root, destination));
     }
 }

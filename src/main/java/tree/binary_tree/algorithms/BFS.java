@@ -21,7 +21,7 @@ public class BFS {
         return result;
     }
 
-    public static boolean treeIncludes(Node<Character> destination, Node<Character> root) {
+    public static boolean treeIncludes(Node<Character> root, Node<Character> destination) {
         if(root == null) return false;
         var queue = new ConcurrentLinkedQueue<Node<Character>>();
         queue.add(root);
