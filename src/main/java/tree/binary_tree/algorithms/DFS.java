@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class DFS {
 
-    public static ArrayList<Node<Character>> dfsForSimpleBinaryTree(Node<Character> root) {
+    public static ArrayList<Node<Character>> dfsForCharBinaryTree(Node<Character> root) {
         if(root == null) return new ArrayList<>();
         var stack = new ArrayDeque<Node<Character>>();
         var result = new ArrayList<Node<Character>>();
@@ -22,10 +22,10 @@ public class DFS {
         return result;
     }
 
-    public static ArrayList<Node<Character>> dfsForSimpleBinaryTreeRecursive(Node<Character> root) {
+    public static ArrayList<Node<Character>> dfsForCharBinaryTreeRecursive(Node<Character> root) {
         if(root == null) return new ArrayList<>();
-        var leftValues = dfsForSimpleBinaryTreeRecursive(root.getLeft());
-        var rightValues = dfsForSimpleBinaryTreeRecursive(root.getRight());
+        var leftValues = dfsForCharBinaryTreeRecursive(root.getLeft());
+        var rightValues = dfsForCharBinaryTreeRecursive(root.getRight());
         var result = new ArrayList<Node<Character>>();
         result.add(root);
         result.addAll(leftValues);

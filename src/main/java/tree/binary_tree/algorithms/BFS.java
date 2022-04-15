@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class BFS {
 
-    public static ArrayList<Node<Character>> bfsForSimpleBinaryTree(Node<Character> root) {
+    public static ArrayList<Node<Character>> bfsForCharBinaryTree(Node<Character> root) {
         if(root == null) return new ArrayList<>();
         var queue = new ConcurrentLinkedQueue<Node<Character>>();
         var result = new ArrayList<Node<Character>>();

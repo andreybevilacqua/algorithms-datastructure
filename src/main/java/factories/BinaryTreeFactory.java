@@ -4,7 +4,7 @@ import tree.binary_tree.Node;
 
 public final class BinaryTreeFactory {
 
-    public static Node<Character> simpleBinaryTree() {
+    public static Node<Character> charBinaryTree() {
         var a = new Node<>('a');
         var b = new Node<>('b');
         var c = new Node<>('c');
