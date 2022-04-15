@@ -3,9 +3,9 @@ package tree.binary_tree;
 import org.junit.Test;
 
 import static factories.BinaryTreeFactory.simpleBinaryTree;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static tree.binary_tree.algorithms.DFS.dfsForSimpleBinaryTree;
-import static tree.binary_tree.algorithms.DFS.dfsForSimpleBinaryTreeRecursive;
+import static tree.binary_tree.algorithms.DFS.*;
 
 public class DFSTest {
 
@@ -23,5 +23,14 @@ public class DFSTest {
     public void simpleBinaryTreeNullTest() {
         var result = dfsForSimpleBinaryTree(null);
         assertTrue(result.isEmpty());
+    }
+
+    @Test
+    public void treeIncludesTest() {
+        var root = simpleBinaryTree();
+        var destination = new Node<>('e');
+        assertTrue(treeIncludesRecursive(root, destination));
+        destination = new Node<>('h');
+        assertFalse(treeIncludesRecursive(root, destination));
     }
 }

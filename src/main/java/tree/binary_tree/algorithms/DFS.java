@@ -32,4 +32,10 @@ public class DFS {
         result.addAll(rightValues);
         return result;
     }
+
+    public static boolean treeIncludesRecursive(Node<Character> root, Node<Character> destination) {
+        if(root == null) return false;
+        if(root.equals(destination)) return true;
+        return treeIncludesRecursive(root.getLeft(), destination) || treeIncludesRecursive(root.getRight(), destination);
+    }
 }
