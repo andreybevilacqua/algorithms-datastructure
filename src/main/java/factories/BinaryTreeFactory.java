@@ -22,7 +22,7 @@ public final class BinaryTreeFactory {
     }
 
 
-    public static Node<Integer> intBinaryTree() {
+    public static Node<Integer> treeSumBinaryTree() {
         var a = new Node<>(3);
         var b = new Node<>(11);
         var c = new Node<>(4);
