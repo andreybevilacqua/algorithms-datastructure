@@ -49,4 +49,18 @@ public class BFS {
         }
         return result;
     }
+
+    public static int treeMin(Node<Integer> root) {
+        if(root == null) return -1;
+        var result = root.getVal();
+        var queue = new ConcurrentLinkedQueue<Node<Integer>>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            var current = queue.poll();
+            if(current.getVal() < result) result = current.getVal();
+            if(current.getLeft() != null) queue.add(current.getLeft());
+            if(current.getRight() != null) queue.add(current.getRight());
+        }
+        return result;
+    }
 }

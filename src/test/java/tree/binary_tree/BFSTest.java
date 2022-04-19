@@ -2,8 +2,7 @@ package tree.binary_tree;
 
 import org.junit.Test;
 
-import static factories.BinaryTreeFactory.charBinaryTree;
-import static factories.BinaryTreeFactory.treeSumBinaryTree;
+import static factories.BinaryTreeFactory.*;
 import static org.junit.Assert.*;
 import static tree.binary_tree.algorithms.BFS.*;
 
@@ -36,5 +35,11 @@ public class BFSTest {
     public void treeSumTest() {
         var root = treeSumBinaryTree();
         assertEquals(25, treeSum(root));
+    }
+
+    @Test
+    public void treeMinTest() {
+        var root = treeMinBinaryTree();
+        assertEquals(3, treeMin(root));
     }
 }
