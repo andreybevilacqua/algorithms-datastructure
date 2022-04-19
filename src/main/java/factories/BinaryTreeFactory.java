@@ -38,4 +38,21 @@ public final class BinaryTreeFactory {
 
         return a;
     }
+
+    public static Node<Integer> treeMinBinaryTree() {
+        var a = new Node<>(5);
+        var b = new Node<>(11);
+        var c = new Node<>(3);
+        var d = new Node<>(4);
+        var e = new Node<>(15);
+        var f = new Node<>(12);
+
+        a.setLeft(b);
+        a.setRight(c);
+        b.setLeft(d);
+        b.setRight(e);
+        c.setRight(f);
+
+        return a;
+    }
 }

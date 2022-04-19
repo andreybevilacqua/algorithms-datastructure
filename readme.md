@@ -18,6 +18,20 @@ Algorithms:
        /   \    \
       d     e    f
 
+### Tree Sum binary tree:
+            3
+          /   \
+         11    4
+       /   \    \
+      4     2    1
+
+### Tree Min binary tree:
+            5
+          /   \
+         11    3
+       /   \    \
+      4     15   12
+
 ## Graphs
 
 ### Char Graph:
