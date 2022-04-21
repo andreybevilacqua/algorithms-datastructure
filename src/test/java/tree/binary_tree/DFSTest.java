@@ -45,4 +45,10 @@ public class DFSTest {
         var root = treeMinBinaryTree();
         assertEquals(3, treeMinRecursive(root));
     }
+
+    @Test
+    public void maxRootToLeafPathSumTest() {
+        var root = maxRootToLeafPathSumBinaryTree();
+        assertEquals(20, maxRootToLeafPathSumRecursive(root));
+    }
 }

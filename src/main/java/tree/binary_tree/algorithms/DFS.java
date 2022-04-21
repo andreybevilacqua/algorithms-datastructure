@@ -6,6 +6,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 
 import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Integer.MIN_VALUE;
 
 public class DFS {
 
@@ -52,5 +53,17 @@ public class DFS {
         var right =  treeMinRecursive(root.getRight());
         var minLeftRight = Math.min(left, right);
         return Math.min(minLeftRight, root.getVal());
+    }
+
+    public static int maxRootToLeafPathSumRecursive(Node<Integer> root) {
+        if(root == null) return MIN_VALUE;
+        if(isLeaf(root)) return root.getVal();
+        var left = maxRootToLeafPathSumRecursive(root.getLeft());
+        var right = maxRootToLeafPathSumRecursive(root.getRight());
+        return (Math.max(left, right) + root.getVal());
+    }
+
+    private static boolean isLeaf(Node<Integer> node) {
+        return node.getLeft() == null && node.getRight() == null;
     }
 }
