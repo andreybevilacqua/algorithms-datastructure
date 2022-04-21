@@ -2,8 +2,7 @@ package tree.binary_tree;
 
 import org.junit.Test;
 
-import static factories.BinaryTreeFactory.charBinaryTree;
-import static factories.BinaryTreeFactory.treeSumBinaryTree;
+import static factories.BinaryTreeFactory.*;
 import static org.junit.Assert.*;
 import static tree.binary_tree.algorithms.DFS.*;
 
@@ -39,5 +38,11 @@ public class DFSTest {
         var root = treeSumBinaryTree();
         var result = treeSumRecursive(root);
         assertEquals(25, result);
+    }
+
+    @Test
+    public void treeMinTest() {
+        var root = treeMinBinaryTree();
+        assertEquals(3, treeMinRecursive(root));
     }
 }

@@ -5,6 +5,8 @@ import tree.binary_tree.Node;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 
+import static java.lang.Integer.MAX_VALUE;
+
 public class DFS {
 
     public static ArrayList<Node<Character>> dfsForCharBinaryTree(Node<Character> root) {
@@ -42,5 +44,13 @@ public class DFS {
     public static int treeSumRecursive(Node<Integer> root) {
         if(root == null) return 0;
         return root.getVal() + treeSumRecursive(root.getLeft()) + treeSumRecursive(root.getRight());
+    }
+
+    public static int treeMinRecursive(Node<Integer> root) {
+        if(root == null) return MAX_VALUE;
+        var left = treeMinRecursive(root.getLeft());
+        var right =  treeMinRecursive(root.getRight());
+        var minLeftRight = Math.min(left, right);
+        return Math.min(minLeftRight, root.getVal());
     }
 }
