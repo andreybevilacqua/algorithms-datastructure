@@ -2,7 +2,7 @@ package dynamic_programming;
 
 import java.util.HashMap;
 
-public class Fibonacci {
+public class FibonacciExercise {
 
     public static long fibRecursive(int n, HashMap<Integer, Long> memo) {
         if(memo.containsKey(n)) return memo.get(n);

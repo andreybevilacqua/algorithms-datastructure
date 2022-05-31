@@ -1,15 +1,14 @@
 package dynamic_programming;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.Fibonacci.fibIterative;
-import static dynamic_programming.Fibonacci.fibRecursive;
+import static dynamic_programming.FibonacciExercise.fibIterative;
+import static dynamic_programming.FibonacciExercise.fibRecursive;
 import static org.junit.Assert.assertEquals;
 
-public class FibonacciTest {
+public class FibonacciExerciseTest {
 
     @Test
     public void fibRecursiveTest() {
