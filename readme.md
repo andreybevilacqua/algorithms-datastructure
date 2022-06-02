@@ -114,4 +114,5 @@ Algorithms:
     | w | w | w | l | l | w |
     | w | l | w | l | l | w |
     | w | w | w | w | w | w |
-    
+
+## Dynamic Programming
