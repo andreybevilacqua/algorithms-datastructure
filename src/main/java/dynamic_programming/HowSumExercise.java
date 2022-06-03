@@ -9,12 +9,12 @@ public class HowSumExercise {
     // n = ints.length
     // time complexity: O(n^m)
     // space complexity: O(m)
-    public static ArrayList<Integer> howSum(int target, int[] ints) {
+    public static ArrayList<Integer> howSumWithoutMemo(int target, int[] ints) {
         if(target == 0) return new ArrayList<>();
         for(int i : ints) {
             var diff = target - i;
             if(diff >= 0) {
-                var remainderResult = howSum(diff, ints);
+                var remainderResult = howSumWithoutMemo(diff, ints);
                 if(remainderResult != null) {
                     remainderResult.add(i);
                     return remainderResult;
@@ -26,13 +26,13 @@ public class HowSumExercise {
 
     // time complexity: O(n*m)
     // space complexity: O(m^2)
-    public static ArrayList<Integer> howSum(int target, int[] ints, HashMap<Integer, ArrayList<Integer>> memo) {
+    public static ArrayList<Integer> howSumWithMemo(int target, int[] ints, HashMap<Integer, ArrayList<Integer>> memo) {
         if(target == 0) return new ArrayList<>();
         if(memo.containsKey(target)) return memo.get(target);
         for(int i : ints) {
             var diff = target - i;
             if(diff >= 0) {
-                var remainderResult = howSum(diff, ints, memo);
+                var remainderResult = howSumWithMemo(diff, ints, memo);
                 if(remainderResult != null) {
                     remainderResult.add(i);
                     memo.put(target, remainderResult);
