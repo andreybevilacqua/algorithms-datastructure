@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.HowSumExercise.howSumWithMemo;
-import static dynamic_programming.HowSumExercise.howSumWithoutMemo;
+import static dynamic_programming.sum_exercises.HowSumExercise.howSumWithMemo;
+import static dynamic_programming.sum_exercises.HowSumExercise.howSumWithoutMemo;
 
 public class HowSumExerciseTest {
 

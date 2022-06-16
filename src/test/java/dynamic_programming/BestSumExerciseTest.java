@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.BestSumExercise.bestSumWithMemo;
-import static dynamic_programming.BestSumExercise.bestSumWithoutMemo;
+import static dynamic_programming.sum_exercises.BestSumExercise.bestSumWithMemo;
+import static dynamic_programming.sum_exercises.BestSumExercise.bestSumWithoutMemo;
 
 public class BestSumExerciseTest {
 
