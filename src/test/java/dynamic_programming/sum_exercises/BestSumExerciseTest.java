@@ -1,4 +1,4 @@
-package dynamic_programming;
+package dynamic_programming.sum_exercises;
 
 import org.junit.Test;
 
