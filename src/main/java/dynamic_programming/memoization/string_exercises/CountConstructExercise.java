@@ -1,4 +1,4 @@
-package dynamic_programming.string_exercises;
+package dynamic_programming.memoization.string_exercises;
 
 import java.util.HashMap;
 

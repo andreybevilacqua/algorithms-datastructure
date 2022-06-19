@@ -1,11 +1,11 @@
-package dynamic_programming.simple_exercises;
+package dynamic_programming.memoization.simple_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.simple_exercises.FibonacciExercise.fibIterative;
-import static dynamic_programming.simple_exercises.FibonacciExercise.fibRecursive;
+import static dynamic_programming.memoization.simple_exercises.FibonacciExercise.fibIterative;
+import static dynamic_programming.memoization.simple_exercises.FibonacciExercise.fibRecursive;
 import static org.junit.Assert.assertEquals;
 
 public class FibonacciExerciseTest {

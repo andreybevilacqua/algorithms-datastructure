@@ -1,10 +1,10 @@
-package dynamic_programming.string_exercises;
+package dynamic_programming.memoization.string_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.string_exercises.CanConstructExercise.canConstruct;
+import static dynamic_programming.memoization.string_exercises.CanConstructExercise.canConstruct;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

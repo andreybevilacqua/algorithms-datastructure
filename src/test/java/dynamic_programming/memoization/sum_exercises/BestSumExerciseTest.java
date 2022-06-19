@@ -1,11 +1,11 @@
-package dynamic_programming.sum_exercises;
+package dynamic_programming.memoization.sum_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.sum_exercises.BestSumExercise.bestSumWithMemo;
-import static dynamic_programming.sum_exercises.BestSumExercise.bestSumWithoutMemo;
+import static dynamic_programming.memoization.sum_exercises.BestSumExercise.bestSumWithMemo;
+import static dynamic_programming.memoization.sum_exercises.BestSumExercise.bestSumWithoutMemo;
 
 public class BestSumExerciseTest {
 

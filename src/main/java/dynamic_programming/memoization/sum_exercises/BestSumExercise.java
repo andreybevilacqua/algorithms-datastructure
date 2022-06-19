@@ -1,4 +1,4 @@
-package dynamic_programming.sum_exercises;
+package dynamic_programming.memoization.sum_exercises;
 
 import java.util.ArrayList;
 import java.util.HashMap;

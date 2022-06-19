@@ -1,10 +1,10 @@
-package dynamic_programming.string_exercises;
+package dynamic_programming.memoization.string_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.string_exercises.CountConstructExercise.countConstruct;
+import static dynamic_programming.memoization.string_exercises.CountConstructExercise.countConstruct;
 import static org.junit.Assert.assertEquals;
 
 public class CountConstructExerciseTest {

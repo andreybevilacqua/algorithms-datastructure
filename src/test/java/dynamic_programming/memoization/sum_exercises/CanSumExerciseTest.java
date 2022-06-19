@@ -1,11 +1,11 @@
-package dynamic_programming.sum_exercises;
+package dynamic_programming.memoization.sum_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.sum_exercises.CanSumExercise.canSumWithMemo;
-import static dynamic_programming.sum_exercises.CanSumExercise.canSumWithoutMemo;
+import static dynamic_programming.memoization.sum_exercises.CanSumExercise.canSumWithMemo;
+import static dynamic_programming.memoization.sum_exercises.CanSumExercise.canSumWithoutMemo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
