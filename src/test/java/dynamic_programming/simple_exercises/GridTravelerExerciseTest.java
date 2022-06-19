@@ -1,10 +1,10 @@
-package dynamic_programming;
+package dynamic_programming.simple_exercises;
 
 import org.junit.Test;
 
 import java.util.HashMap;
 
-import static dynamic_programming.GridTravelerExercise.gridTraveler;
+import static dynamic_programming.simple_exercises.GridTravelerExercise.gridTraveler;
 import static org.junit.Assert.assertEquals;
 
 public class GridTravelerExerciseTest {

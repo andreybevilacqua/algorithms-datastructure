@@ -1,4 +1,4 @@
-package dynamic_programming;
+package dynamic_programming.simple_exercises;
 
 import java.util.HashMap;
 
