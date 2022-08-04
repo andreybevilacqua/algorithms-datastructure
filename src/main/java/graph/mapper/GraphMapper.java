@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.stream.Collectors.toList;
-
 public final class GraphMapper {
 
     public static Map<Character, List<Character>> mapEdgePathToGraph(List<List<Character>> edge) {
@@ -20,7 +18,7 @@ public final class GraphMapper {
                         list
                             .stream()
                             .filter(letter -> letter != c)
-                            .collect(toList())
+                            .toList()
                     );
             }
         }

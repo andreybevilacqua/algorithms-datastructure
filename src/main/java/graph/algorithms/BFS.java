@@ -1,8 +1,5 @@
 package graph.algorithms;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -57,14 +54,14 @@ public class BFS {
 
         while(!queue.isEmpty()) {
             var currentPair = queue.poll();
-            if(currentPair.getNode() == destination) {
-                result = currentPair.getDistance();
+            if(currentPair.node() == destination) {
+                result = currentPair.distance();
                 break;
             } else {
-                if(!visited.contains(currentPair.getNode())) {
-                    visited.add(currentPair.getNode());
-                    var newDistance = currentPair.getDistance() + 1;
-                    for(char c : graph.get(currentPair.getNode())) {
+                if(!visited.contains(currentPair.node())) {
+                    visited.add(currentPair.node());
+                    var newDistance = currentPair.distance() + 1;
+                    for(char c : graph.get(currentPair.node())) {
                         if(!visited.contains(c)) queue.add(new NodeDistancePair(c, newDistance));
                     }
                 }
@@ -73,10 +70,5 @@ public class BFS {
         return result;
     }
 
-    @AllArgsConstructor
-    @Getter
-    private static class NodeDistancePair {
-        private char node;
-        private int distance;
-    }
+    private record NodeDistancePair(char node, int distance){}
 }

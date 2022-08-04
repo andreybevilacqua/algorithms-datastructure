@@ -15,7 +15,7 @@ public class AllConstructExerciseTest {
         System.out.println("purple example -> " + allConstruct("purple", new String[]{"purp","p","ur","le","purpl"}));
         System.out.println("abcdef example -> " + allConstruct("abcdef", new String[]{"ab","abc","cd","def","abcd","ef","c"}));
         System.out.println("skateboard example -> " + allConstruct("skateboard", new String[]{"bo","rd","ate","t","ska","sk","boar"}));
-        System.out.println("multiple a's example -> " + allConstruct("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz", new String[]{"a","aa","aaa","aaaa","aaaaa"}));
+        //System.out.println("multiple a's example -> " + allConstruct("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz", new String[]{"a","aa","aaa","aaaa","aaaaa"}));
     }
 
     @Test
